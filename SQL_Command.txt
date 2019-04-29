@@ -1,0 +1,40 @@
+mysql -u root 
+create database SAHK_Savings;
+use SAHK_Savings;
+drop table user;
+create table USER (
+	  userid int NOT NULL AUTO_INCREMENT,
+	  username  varchar(32) NOT NULL,
+	  password   varchar(32) NOT NULL,
+	  daddress   text NOT NULL,
+	  cp   int NOT NULL,
+	  isadmin   boolean NOT NULL,
+	  PRIMARY KEY (userid)
+	);
+
+INSERT INTO USER (username,password,daddress,cp,isadmin)
+VALUES ('sahk_admin1','34784e6573edb13228fc27edf7c9915d','sahk','99999',true);
+drop table product;
+create table PRODUCT (
+	  productid int NOT NULL AUTO_INCREMENT,
+	  productname  text NOT NULL,
+	  description   text NOT NULL,
+	  category   varchar(50) NOT NULL,
+	  price   int NOT NULL,
+	  quantity   int NOT NULL,
+          image   varchar(255) NOT NULL,
+	  status   text NOT NULL,
+	  PRIMARY KEY (productid)
+	);
+
+INSERT INTO 'product' ('productname', 'description', 'category', 'price', 'quantity', 'image', 'status') VALUES
+('Bone toy', 'Bone toy for pets.', 'Pet Goods', 200, 3, './Image/item/bonetoy.png', 'On Sale'),
+('Brown Shoes', 'Brown Shoes for men.', 'Accessories', 1000, 2, './Image/item/brownshoes.png', 'On Sale'),
+('CD ROM', 'CD ROM', 'CD', 100, 93, './Image/item/cdrom.png', 'On Sale'),
+('Hand-Bag', 'Orange Hand-Bag', 'Accessories', 3000, 2, './Image/item/handbag(2).png', 'On Sale'),
+('Hand-Bag', 'Orange Hand-Bag', 'Accessories', 3000, 2, './Image/item/handbag(2).png', 'On Sale'),
+('Lego', 'Lego Box', 'Toys', 500, 1, './Image/item/lego.png', 'On Sale'),
+('Clothes for Men', 'Clothes for men', 'Accessories', 700, 5, './Image/item/mencloth.png', 'On Sale'),
+('Monitor', 'Computer Monitor', 'Computer', 4500, 3, './Image/item/monitor.png', 'On Sale'),
+('Teddy Bear', 'Teddy Bear Toy', 'Toys', 600, 10, './Image/item/teddybear.png', 'On Sale'),
+('Watch for Men', 'Rolex Watch', 'Accessories', 3000, 0, './Image/item/watch.png', 'Sold Out');
